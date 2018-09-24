@@ -1,0 +1,24 @@
+<div class="container">
+<table class="table table-condensed">
+
+  <thead>
+    <th>ID</th>
+    <th>Serial Number</th>
+    <th>Topic</th>
+    <th>Total Questions</th>
+    <th>Marks</th>
+    <th>Action</th>
+  </thead>
+  <tbody *ngFor="let exam of Arr">
+    
+      <td> {{exam.id}}</td>
+      <td>{{exam.SN}}</td>
+      <td>{{exam.topic}}</td>
+      <td>{{exam.TotalQuestion}}</td>
+      <td>{{exam.Marks}}</td>
+      <td><button type="button" (click)="Delete(exam.id)">Delete it</button></td>
+    
+  
+</tbody>
+</table>
+</div>

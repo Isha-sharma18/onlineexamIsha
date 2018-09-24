@@ -1,0 +1,72 @@
+<!-- //login form -->
+<h2>Login Form</h2>
+
+<form [formGroup]="form" (ngSubmit)='OnSubmit()'>
+  <label for="uname"><b>Email</b></label>
+  <input type="text" placeholder="Enter your Email" formControlName="email" required>
+  <label for="psw"><b>Password</b></label>
+  <input type="password" placeholder="Enter Password" formControlName="password" required>
+
+  <button type="submit">Log in</button>
+</form>
+
+<!-- //signup form -->
+<h2>Sign up Form</h2>
+
+<form [formGroup]="registrationForm" (ngSubmit)='OnRegistration()'>
+  <div class="imgcontainer">
+
+
+
+
+  </div>
+  <!-- //Enter name -->
+  <div class="container">
+    <label for="uname"><b>Enter your name</b></label>
+    <input class="textbox" #ref type="text" value="rwerwerewrew" formControlName="firstName" placeholder="First Name*" />
+
+
+    <!-- //enter serail no -->
+    <label for="uname"><b>Enter SN</b></label>
+    <input class="textbox" #ref type="text"  formControlName="SN" placeholder="Enter serial no*" />
+
+
+    <!-- //enter gender -->
+    <label for="uname"><b>Enter your gender</b></label>
+    <input class="textbox" type="text" formControlName="gender" placeholder="Gender*" />
+
+    <br>
+    <br>
+
+
+    <!-- //enter college name -->
+    <label for="uname"><b>Enter your college name</b></label>
+    <input type="text" placeholder="Enter college name" formControlName="uname" required>
+
+    <!-- //enter your email -->
+    <label for="uname"><b>Enter your email</b></label>
+    <input class="textbox" type="text" formControlName="email" placeholder="Email Address*" />
+
+
+    <label for="uname"><b>Mobile no.</b></label>
+    <input type="text" placeholder="Enter mobile no." formControlName="uname" required>
+
+    <!-- //enter your password -->
+    <label for="uname"><b>Enter your password</b></label>
+    <input class="textbox" (keyup)="onKey($event)" [type]="type" formControlName="password" placeholder="Enter Password*" /><i
+      (mouseup)="hide()" (mousedown)="show()" class="fas fa-eye"></i>
+
+
+    <!-- //sign up from here -->
+
+    <button type="submit">Sign up</button>
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+  </div>
+
+  <div class="container" style="background-color:#f1f1f1">
+
+    <span class="psw">Forgot <a href="#">password?</a></span>
+  </div>
+</form>
