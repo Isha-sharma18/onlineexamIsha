@@ -10,7 +10,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ExamComponent } from './exam/exam.component';
 import { ViewComponent } from './view/view.component';
-import { UpdateComponent } from './update/update.component'
+import { UpdateComponent } from './update/update.component';
 
 
 const routes = [{
@@ -36,7 +36,8 @@ const routes = [{
     path:'view',
     component:ViewComponent
   },
- {path:'Update',
+ {
+   path:'update',
     component:UpdateComponent
   }
 ]

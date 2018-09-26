@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import {ApiHitService} from '../api-hit.service';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'
 import { exams } from '../exams.interface';
+import {DataService} from '../data.service';
 
 @Component({
   selector: 'app-exam',
@@ -11,9 +12,11 @@ import { exams } from '../exams.interface';
 })
 export class ExamComponent implements OnInit {
 
-  constructor(private router:Router, private apiHit: ApiHitService) { }
+  constructor(private router:Router, private apiHit: ApiHitService,
+  private data : DataService) { }
 
-  Arr : Array<{id: number, SN: number, topic : string, TotalQuestion: number, Marks: number}> = [];
+  Arr : Array<{id: number, SN: number, topic : string, TotalQuestion: number, Marks: number,
+    Time_Limit : string}> = [];
   len : number;
 
 
@@ -35,6 +38,7 @@ export class ExamComponent implements OnInit {
              topic : res.data[i].Topic,
              TotalQuestion : res.data[i].Total_Question,
              Marks : res.data[i].Marks,
+             Time_Limit : res.data[i].Time_Limit,
          })
         }}),
        err => {
@@ -54,6 +58,13 @@ export class ExamComponent implements OnInit {
          console.log(err);
        }
 
+  }
+
+
+  // for update
+  Update(id){
+    this.data.setID(id);
+    this.router.navigate(['/update'])
   }
 
 

@@ -72,8 +72,25 @@ export class ApiHitService {
     this.count=count;
   }
 
-
+//for getting 
   getRoomsById(id){
+    return this.http.get('http://localhost:8000/exams/' + id, this.httpOpt);
+  }
+
+  //for updating data
+  updateExam(Arr, id): Observable<any> {
+    let body = {
+      SN : Arr.SN,
+      Topic : Arr.topic,
+      Total_Question : Arr.TotalQuestion,
+      Marks : Arr.Marks,
+      Time_Limit : Arr.Time_Limit
+    }
+    return this.http.put('http://localhost:8000/exams/'+ id, body, this.httpOpt);
+  }
+
+  //for getting exam by ID
+  getExamById(id): Observable<any> {
     return this.http.get('http://localhost:8000/exams/' + id, this.httpOpt);
   }
 

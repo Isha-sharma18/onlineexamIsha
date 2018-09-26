@@ -7,6 +7,7 @@
     <th>Topic</th>
     <th>Total Questions</th>
     <th>Marks</th>
+    <th>Time Limit</th>
     <th>Action</th>
   </thead>
   <tbody *ngFor="let exam of Arr">
@@ -16,8 +17,9 @@
       <td>{{exam.topic}}</td>
       <td>{{exam.TotalQuestion}}</td>
       <td>{{exam.Marks}}</td>
-      <td><button type="button" (click)="Delete(exam.id)">Delete it</button></td>
-    
+      <td>{{exam.Time_Limit}}</td>
+      <td><button type="button" (click)="Delete(exam.id)">Delete it</button>
+      <button type="button" (click)="Update(exam.id)">Update it</button></td>
   
 </tbody>
 </table>
